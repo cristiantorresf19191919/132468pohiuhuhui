@@ -1,0 +1,63 @@
+@font-face {
+    font-family: "Muli-Regular";
+    src: url("/assets/fonts/muli/Muli-Regular.ttf");
+  }
+  
+  
+   @font-face {
+    font-family: "Muli-SemiBold";
+    src: url("/assets/fonts/muli/Muli-SemiBold.ttf");
+  } 
+  
+  
+  @font-face {
+    font-family: "Poppins-Regular";
+    src: url("/assets/fonts/poppins/Poppins-Regular.ttf");
+  }
+  
+  
+  @font-face {
+    font-family: "Poppins-Medium";
+    src: url("/assets/fonts/poppins/Poppins-Medium.ttf");
+  }
+
+  h1, h2, h3 {
+      font-family:  "Poppins-Medium";
+      text-shadow: 2px 2px 40px black;
+      text-align: center;
+
+  }
+  /* HeroSearch private styles */
+
+.search-result li {
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  width: 195px;
+  height: 16px;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+  list-style-type: none;
+  &:hover {
+    background-color: #607D8B;
+  }
+  a {
+    color: #888;
+    display: block;
+    text-decoration: none;
+    &:hover, &:active {
+      color: white;
+    }
+  }
+}
+
+#search-box {
+  width: 200px;
+  height: 20px;
+}
+
+ul.search-result {
+  margin-top: 0;
+  padding-left: 0;
+}

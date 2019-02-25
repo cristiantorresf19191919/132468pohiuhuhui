@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="row ">
+    <div class="col-12">
+      <div class="imgspacetop border border-primary"></div>
+      <div>
+      <img src="assets/logosm.png" class="img-fluid d-block d-sm-none small-banner shadow-lg animated pulse" alt="Responsive image">
+    </div>
+    <div class="nosaltos">
+        <img src="assets/bannerlogo.png" class="img-fluid logo-banner d-none d-sm-block hvr-wobble-skew" alt="Responsive image" *ngIf="condition" [@fadeInOnEnter] [@fadeOutOnLeave]>
+      </div>
+        <div (window:wheel)="wheelmouse($event)"></div>
+        
+    </div>
+    
+    
+    
+  </div>
+  <div class="row">
+    
+    <div class="col-12">
+        
+        <div class="navbar navbar-expand-md navbar-dark bg-dark fixed-top shadow-lg">
+          <a href="#" class="navbar-brand"> <img class ="img-fluid logoa hvr-pop" src="assets/logoa.png" [@rubberBand]="condition"> </a> 
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" >
+            <span class="navbar-toggler-icon"></span>  
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+           <ul class="navbar-nav ml-auto">
+             <nav class="cl-effect-10 d-flex flex-column flex-sm-row">    
+             
+             <li class="nav items negrita"><a routerLink="home"routerLinkActive="active-link" class="nav-link text-white " data-hover="Home" ><span>Home</span> </a></li>
+                
+             <li class="nav items negrita"><a routerLink="registro"routerLinkActive="active-link" class="nav-link text-white h6" data-hover="Registrate" ><span>Registrate</span></a></li>
+                
+             <li class="nav items negrita"><a routerLink="login"routerLinkActive="active-link"class="nav-link text-white h6" data-hover="Inicia Sesión" ><span>Inicia Sesión</span></a></li>
+                
+             <li class="nav items negrita"><a href="" routerLinkActive="active-link" class="nav-link text-white h6" data-hover="Práctica Libre" ><span>Práctica Libre</span></a></li>
+                
+             <li class="nav items negrita"><a href=""routerLinkActive="active-link" class="nav-link text-white h6" data-hover="Cursos y Entrenamiento" ><span>Cursos y Entrenamiento</span></a></li>
+                
+             <li class="nav items negrita"><a href=""routerLinkActive="active-link" class="nav-link text-white h6" data-hover="Escala de Piedra" ><span>Escala Piedra</span></a></li>
+             
+             <li class="nav items negrita"><a href="#contacto"routerLinkActive="active-link" class="nav-link text-white h6" data-hover="Contáctanos" ><span>Contáctanos</span></a></li></nav>
+            
+            </ul>
+          </div>
+        </div>
+
+
+
+    </div>
+  </div>
+
+ 
+</div>
