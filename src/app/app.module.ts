@@ -44,11 +44,13 @@ import {httpInterceptorProviders} from "./http-interceptors";
     MessagesModule,
     MessageModule,
     FormsModule,
+    PasswordModule,
+    CheckboxModule,
     HttpClientModule,
     ReactiveFormsModule,
     NgFlashMessagesModule,
     NgxLoadingModule.forRoot({
-        
+
     })
   ],
   providers: [httpInterceptorProviders],

@@ -23,6 +23,7 @@ interface Response {
   styleUrls: ["./admin.component.scss"]
 })
 export class AdminComponent implements OnInit {
+
   @ViewChild("ngxLoading") ngxLoadingComponent: NgxLoadingComponent;
   @ViewChild("customLoadingTemplate") customLoadingTemplate: TemplateRef<any>;
   public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
@@ -46,7 +47,7 @@ export class AdminComponent implements OnInit {
   // fin loader config
 
   // variables
-  clientes$: Observable<Usuario[]>;
+  clientesTraiga$: any;
   private searchTerms$ = new Subject<string>();
 
   public loading = false;
@@ -63,7 +64,8 @@ export class AdminComponent implements OnInit {
     this.searchTerms$.next(term);
   }
   ngOnInit() {
-    this.clientes$ = this.searchTerms$.pipe(
+
+    this.clientesTraiga$ = this.searchTerms$.pipe(
       debounceTime(300),
       distinctUntilChanged(),
       switchMap((term: string) => this.Com.BuscarClientes(term))
