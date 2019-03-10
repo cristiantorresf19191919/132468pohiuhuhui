@@ -21,6 +21,7 @@ import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {CheckboxModule} from 'primeng/checkbox';
 import {httpInterceptorProviders} from "./http-interceptors";
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import {httpInterceptorProviders} from "./http-interceptors";
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    NgxDatatableModule,
     BrowserAnimationsModule,
     PasswordModule,
     CheckboxModule,
