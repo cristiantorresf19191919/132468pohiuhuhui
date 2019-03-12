@@ -5,7 +5,7 @@
       <div>
       <img src="assets/logosm.png" class="img-fluid d-block d-sm-none small-banner shadow-lg animated pulse" alt="Responsive image">
     </div>
-    <div class="nosaltos">
+    <div class="nosaltos" *ngIf="!ADMIN_ROLE">
         <img src="assets/bannerlogo.png" class="img-fluid logo-banner d-none d-sm-block hvr-wobble-skew" alt="Responsive image" *ngIf="condition" [@fadeInOnEnter] [@fadeOutOnLeave]>
       </div>
         <div (window:wheel)="wheelmouse($event)"></div>

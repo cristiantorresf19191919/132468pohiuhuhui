@@ -72,6 +72,21 @@ export class AdminComponent implements OnInit {
     );
   }
 
+
+  mostrarUsuario(user) {
+    Swal.fire(
+      {
+        title:  `Mostrando Usuario` ,
+        type: 'info',
+        width: 1000,
+        html: user,
+        focusConfirm: false,
+        confirmButtonText:
+          ' OK!',
+      }
+    );
+  }
+
   salirsesion() {
     this.Com.logout();
   }
@@ -79,12 +94,14 @@ export class AdminComponent implements OnInit {
   peticionClients() {
     this.loading = true;
     this.Com.ObtenerClientes().subscribe((data: Response) => {
+      console.log(data);
+      
       if (data.success) {
         this.loading = false;
         this.flash.showFlashMessage({
           messages: [data.msg],
           dismissible: true,
-          timeout: false,
+          timeout: 4000,
           type: "success"
         });
         this.clientes = data.clientes;

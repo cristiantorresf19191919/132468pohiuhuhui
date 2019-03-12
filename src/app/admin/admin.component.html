@@ -1,68 +1,67 @@
-<h1>Admin Cuenta</h1>
-<button class="ml-100" (click)="salirsesion()"> Cerrar Sesion</button>
-<button (click)="peticionClients()"> Ver Clientes</button>
-<button (click)="buscarClientes()">Buscar Clientes</button>
-
-<input #searchBox id="search-box" (input)="search(searchBox.value)">
-<div class="search-results" *ngIf="clientes$">
-  <li *ngFor="let item of clientes$ | async"></li>
-  <a>{{item}}</a>
-</div>
 
 
+<div class="mt-5">
 
-<div class="loading">
+  <h1>Admin Cuenta</h1>
 
-  <ng-template #customLoadingTemplate>
-    <div class="custom-class">
-      <h3>
-        Loading...
-      </h3>
-      <button (click)="showAlert()">
-        Click me!
-      </button>
-    </div>
-  </ng-template>
-
-  <ngx-loading [show]="loading" [config]="{animationType: ngxLoadingAnimationTypes.cubeGrid, primaryColour: primaryColour,secondaryColour: secondaryColour, fullScreenBackdrop: fullscreenloadingdecision , backdropBorderRadius: radio, backdropBackgroundColour: colorback}"
+  <button class="ml-100 btn btn-danger" (click)="salirsesion()"> Cerrar Sesion</button>
+  <button (click)="peticionClients()"  class="btn btn-info mx-1"> Ver Clientes</button>
+  <button (click)="buscarClientes()" class="btn btn-success">Buscar Clientes</button>
+  
+  <input #searchBox id="search-box" class="" (input)="search(searchBox.value)">
+   
+  <div class="loading">
+    
+    <ng-template #customLoadingTemplate>
+      <div class="custom-class">
+        <h3>
+          Loading...
+        </h3>
+        <button (click)="showAlert()">
+          Click me!
+        </button>
+      </div>
+    </ng-template>
+    
+    <ngx-loading [show]="loading" [config]="{animationType: ngxLoadingAnimationTypes.cubeGrid, primaryColour: primaryColour,secondaryColour: secondaryColour, fullScreenBackdrop: fullscreenloadingdecision , backdropBorderRadius: radio, backdropBackgroundColour: colorback}"
     [template]="loadingTemplate"></ngx-loading>
+  </div>
+  
+  <ng-flash-message></ng-flash-message>
+  
+  
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center border border-primary">
+      <div *ngIf="clientes" [@childStag]="clientes.length" class="w-100 border border-primary">
+        
+        <ngx-datatable class="bootstrap mt-5" [rows]="clientes"
+        [columnMode]="'force'" [headerHeight]="50" [summaryPosition]="'bottom'" [footerHeight]="40" [limit]="15"
+        [scrollbarV]="false" [scrollbarH]="true" [rowHeight]="'55'" [reorderable]="reorderable">
+        <ngx-datatable-column name="Nombre" width="80"></ngx-datatable-column>
+        <ngx-datatable-column name="Correo" width="10"></ngx-datatable-column>
+        <ngx-datatable-column name="Celular" width="80"></ngx-datatable-column>
+        <ngx-datatable-column name="Date" width="80"></ngx-datatable-column>
+        <ngx-datatable-column name="Acciones">
+          <ng-template let-user="row" ngx-datatable-cell-template>
+            <button (click)="mostrarUsuario(user)" class="btn btn-info mx-1"> s</button>
+            
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+      <!-- 
+        <div *ngFor="let item of clientes" [@zoomInUp]="1" [@zoomOutUp]="1">
+          <div class="border shadow-lg bg-dark text-white ">
+            <h6 class=""> {{item.nombre | uppercase}}</h6> <button (click)="eliminar(item)">clear</button>
+            <h6 class=""> {{item.correo}}</h6>
+            <h6 class=""> {{item.date}}</h6>
+          </div>
+        </div>
+      -->
+      
+      
+    </div>
+    
+  </div>
 </div>
 
-<ng-flash-message></ng-flash-message>
-
-
-<div class="row">
-  <div class="col-12 d-flex justify-content-center border border-primary">
-    <div *ngIf="clientes" [@childStag]="clientes.length" class="w-100 border border-primary">
-		 
-
-
-			<ngx-datatable class="bootstrap mt-5" [rows]="clientes"
-    [columnMode]="'force'" [headerHeight]="50" [summaryPosition]="'bottom'" [footerHeight]="40" [limit]="20"
-    [scrollbarV]="false" [scrollbarH]="true" [rowHeight]="'55'" [reorderable]="reorderable">
-    <ngx-datatable-column name="Nombre" width="80"></ngx-datatable-column>
-    <ngx-datatable-column name="Correo" width="10"></ngx-datatable-column>
-    <ngx-datatable-column name="Celular" width="80"></ngx-datatable-column>
-    <ngx-datatable-column name="Date" width="80"></ngx-datatable-column>
-    <ngx-datatable-column name="Acciones">
-      <ng-template let-document="row" ngx-datatable-cell-template>
-        <button class="btn btn-info mx-1"> s</button>
-
-      </ng-template>
-    </ngx-datatable-column>
-  </ngx-datatable>
-<!-- 
-			<div *ngFor="let item of clientes" [@zoomInUp]="1" [@zoomOutUp]="1">
-        <div class="border shadow-lg bg-dark text-white ">
-          <h6 class=""> {{item.nombre | uppercase}}</h6> <button (click)="eliminar(item)">clear</button>
-          <h6 class=""> {{item.correo}}</h6>
-          <h6 class=""> {{item.date}}</h6>
-        </div>
-			</div>
-			 -->
-
-
-    </div>
-
-  </div>
 </div>
