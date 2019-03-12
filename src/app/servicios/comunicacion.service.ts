@@ -143,7 +143,7 @@ export class ComunicacionService {
   }
   ObtenerClientes() {
     return this.httpClient
-      .get(this.url + "/users/obtener")
+      .get(this.url + "/users/admin/obtener")
       .pipe(catchError(this.handleError("Obtener Clientes")));
   }
 
