@@ -16,7 +16,7 @@ export class AdminInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const adminToken = localStorage.getItem("id_token");
-  
+
     if (adminToken) {
       const adminTokenReq = req.clone({
         setHeaders: { admintoken: adminToken }

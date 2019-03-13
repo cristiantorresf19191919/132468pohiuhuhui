@@ -3,9 +3,12 @@ import { ComunicacionService } from "../servicios/comunicacion.service";
 import { NgFlashMessageService } from "ng-flash-messages";
 import { Router } from "@angular/router";
 import { ngxLoadingAnimationTypes, NgxLoadingComponent } from "ngx-loading";
-import { FormControl } from "@angular/forms";
+import { FormControl, FormGroup, FormBuilder } from "@angular/forms";
 import Swal from "sweetalert2";
 import { JwtHelperService } from "@auth0/angular-jwt";
+import { AsyncValidador } from "../_validadores/LoginCorreonoEsta";
+import { ValidacionesPersonalizadas } from "../_validadores/ValidacionesPersonalizadas";
+
 const helper = new JwtHelperService();
 interface Data {
   success: boolean;
@@ -13,6 +16,7 @@ interface Data {
   user: any;
   token: string;
   admin: string;
+  role: string;
 }
 
 declare const $: any;
@@ -47,9 +51,13 @@ export class LoginComponent implements OnInit {
   public loading = false;
 
   // DATOS INPUT
+  LoginDaddy: FormGroup;
   Email: string;
   Password: string;
   recordarD: boolean;
+
+  // FIN VALOS INPUT
+
   values = "";
   expirationDate: any;
   isExpired: boolean;
@@ -68,17 +76,42 @@ export class LoginComponent implements OnInit {
   constructor(
     private Com: ComunicacionService,
     private flash: NgFlashMessageService,
-    private router: Router
+    private router: Router,
+    private ConstructorFormu: FormBuilder,
+    private asyncValidator: AsyncValidador,
+    private ValidacionesPersonalizadas: ValidacionesPersonalizadas
   ) {}
 
   ngOnInit() {
+    if (this.Com.isAuthenticated) {
+      this.router.navigate(["/admin"]);
+    }
+
     $(".wrapper").mousemove(e => {
       console.log("muevete mouse");
       const moveX = (e.pageX * -1) / 120;
       const moveY = (e.pageX * -1) / 120;
       $(".wrapper").css("background-position", moveX + "px " + moveY + "px ");
     });
+
+    this.LoginDaddy = this.ConstructorFormu.group({
+      Email: [
+        "",
+        this.ValidacionesPersonalizadas.Busque(/@/i),
+        this.asyncValidator.validate.bind(this.asyncValidator)
+      ],
+      Password: [""],
+      recordarD:['']
+    });
   }
+
+  get Emailgetter(){
+    return this.LoginDaddy.get('Email');
+  }
+  get passwordgetter(){
+    return this.LoginDaddy.get('Password');
+  }
+
 
   go() {
     this.loading = true;
@@ -87,12 +120,13 @@ export class LoginComponent implements OnInit {
       Password: this.Password
     };
 
-    this.Com.Login(user).subscribe((data: Data) => {
+    this.Com.Login(this.LoginDaddy.value).subscribe((data: Data) => {
       if (data.success) {
         console.log(JSON.stringify(data));
         this.loading = false;
-        // mirar que fecha el token se vence
+        // guarda la fecha de expiracion del token
         this.expirationDate = helper.getTokenExpirationDate(data.token);
+        // guarda boolean si el token es expirado o no
         this.isExpired = helper.isTokenExpired(data.token);
         this.flash.showFlashMessage({
           messages: [
@@ -106,7 +140,7 @@ export class LoginComponent implements OnInit {
           type: "success"
         });
         this.Com.storeUserData(data.token, data.user);
-        if (data.admin) {
+        if (data.user.rol === "ADMIN_ROLE") {
           // begin swal
           Swal.fire({
             title: data.msg,
@@ -120,6 +154,8 @@ export class LoginComponent implements OnInit {
           }).then(result => {
             if (result.value) {
               this.router.navigate(["/admin"]);
+            } else {
+              this.router.navigate(["/"]);
             }
           });
           // fIN SWAL

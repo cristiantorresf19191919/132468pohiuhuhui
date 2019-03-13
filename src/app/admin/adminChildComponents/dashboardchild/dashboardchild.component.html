@@ -1,0 +1,83 @@
+<br>
+<input type="text" class="form-control" placeholder="Cuantas Filas Quieres Ver Por Pagina" [(ngModel)]="filas" name="filas" aria-label="Username" aria-describedby="basic-addon1">
+<button class="btn btn-primary text-center" (click)="reset()"> Activ/Desac Paginador</button>
+<!-- <i class="pi pi-spin pi-spinner" style="font-size: 3em"></i> -->
+<i class="pi pi-check" style="font-size: 4em" ></i>
+
+<p-table #tt [value]="clientes" [columns]="cols" [paginator]="paginator" [rows]="filas" sortMode="multiple" [multiSortMeta]="multiSortMeta" class="animated tada">
+  <ng-template pTemplate="caption">
+      Clientes Registrados
+      <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+        <input type="text" pInputText size="50" placeholder="Busqueda Global" (input)="tt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+  </ng-template>
+<ng-template pTemplate="header" let-columns>
+    <tr>
+
+      <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+        {{col.header}}
+
+      </th>
+
+
+        <!-- <th>Nombre</th>
+        <th>Correo</th>
+        <th>Cedula</th>
+        <th>Celular</th>
+        <th>Fecha</th> -->
+    </tr>
+    <tr>
+        <th *ngFor="let col of columns" [ngSwitch]="col.field">
+            <input *ngSwitchCase="'nombre'" pInputText type="text" (input)="tt.filter($event.target.value, col.field, col.filterMatchMode)">
+            <div *ngSwitchCase="'correo'">
+                {{yearFilter}}
+            </div>
+            <p-dropdown *ngSwitchCase="'cedula'" [options]="brands" [style]="{'width':'100%'}" (onChange)="tt.filter($event.value, col.field, 'equals')"></p-dropdown>
+            <p-multiSelect *ngSwitchCase="'date'" [options]="colors" defaultLabel="All Colors" (onChange)="tt.filter($event.value, col.field, 'in')"></p-multiSelect>
+        </th>
+    </tr>
+</ng-template>
+<ng-template pTemplate="body" let-customer let-columns="columns">
+    <tr>
+
+
+      <td *ngFor="let col of columns">
+          <div *ngIf="customer[col.field] === customer.date; else loggedOut">
+              {{customer[col.field] | date}}
+            </div>
+
+            <ng-template #loggedOut>
+                {{customer[col.field] }}
+            </ng-template>
+
+
+
+
+      </td>
+
+        <!-- <td>{{car.nombre}}</td>
+        <td>{{car.correo}}</td>
+        <td>{{car.cedula}}</td>
+        <td>{{car.celular}}</td>
+        <td>{{car.date | date:'medium'  }}</td> -->
+    </tr>
+</ng-template>
+<ng-template pTemplate="paginatorleft" let-state>
+    que hay aca {{state.totalRecords}}
+    <button type="button" pButton icon="fa-refresh"></button>
+</ng-template>
+<ng-template pTemplate="paginatorright">
+    <button type="button" pButton icon="fa-cloud-upload"></button>
+</ng-template>
+<ng-template pTemplate="footer" let-columns>
+    <tr>
+        <td *ngFor="let col of columns">
+        {{col.header}}
+        </td>
+    </tr>
+</ng-template>
+<ng-template pTemplate="summary">
+    Hay {{clientes?.length}} clientes Registrados
+</ng-template>
+</p-table>
+
+

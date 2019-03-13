@@ -10,7 +10,6 @@ import { RegistroComponent } from "./registro/registro.component";
 import { LoginComponent } from "./login/login.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AuthGuard } from "./servicios/auth.guard";
-import { AdminComponent } from "./admin/admin.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full", data: { state: "home" } },
@@ -23,7 +22,11 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard]
   },
-  { path: "admin", component: AdminComponent , canActivate: [AuthGuard] }
+  {
+    path: "admin",
+    loadChildren: "./admin/admin-module.module#AdminModuleModule"
+
+  }
 ];
 
 @NgModule({

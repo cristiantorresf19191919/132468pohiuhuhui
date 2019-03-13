@@ -1,6 +1,6 @@
 export class Usuario {
 
-  
+
        nombre: string;
        email: string;
        password: string;
@@ -10,6 +10,9 @@ export class Usuario {
        cedula?: number;
        contraseña?: boolean;
        _id?: string;
- 
+       date?: string;
+       iat?: number;
+       exp?: number;
+
 
 }

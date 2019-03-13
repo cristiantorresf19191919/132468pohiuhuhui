@@ -9,6 +9,14 @@ import { Observable, of, Subject } from "rxjs";
 import { debounceTime, distinctUntilChanged, switchMap } from "rxjs/operators";
 import Swal from "sweetalert2";
 import { Usuario } from "../models/usuario.model";
+import { MenuItem } from "primeng/api";
+
+interface Clientes {
+  correo;
+  cedula;
+  celular;
+  clientes: any;
+}
 
 interface Response {
   success: boolean;
@@ -23,9 +31,25 @@ interface Response {
   styleUrls: ["./admin.component.scss"]
 })
 export class AdminComponent implements OnInit {
+  private items: MenuItem[];
+
+  cars: any;
+
+  clientes: any;
+
+  brands: any;
+
+  colors: any;
+
+  cols: any;
+
+  yearFilter: number;
+
+  yearTimeout: any;
 
   @ViewChild("ngxLoading") ngxLoadingComponent: NgxLoadingComponent;
   @ViewChild("customLoadingTemplate") customLoadingTemplate: TemplateRef<any>;
+  @ViewChild("searchBox") searchBox;
   public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
   public primaryColour = "rgb(42, 206, 42)";
   public secondaryColour = "rgb(247, 64, 8)";
@@ -45,62 +69,21 @@ export class AdminComponent implements OnInit {
     backdropBackgroundColour: this.colorback
   };
   // fin loader config
-
   // variables
-  clientesTraiga$: any;
-  private searchTerms$ = new Subject<string>();
-
   public loading = false;
-  public clientes: any;
-
   constructor(
     private Com: ComunicacionService,
     private flash: NgFlashMessageService,
     private router: Router
   ) {}
-
-  // mete un termino de busqueda en el arreglo de observables
-  search(term: string): void {
-    this.searchTerms$.next(term);
-  }
   ngOnInit() {
 
-    this.clientesTraiga$ = this.searchTerms$.pipe(
-      debounceTime(300),
-      distinctUntilChanged(),
-      switchMap((term: string) => this.Com.BuscarClientes(term))
-    );
+
+
   }
 
   salirsesion() {
     this.Com.logout();
   }
 
-  peticionClients() {
-    this.loading = true;
-    this.Com.ObtenerClientes().subscribe((data: Response) => {
-      if (data.success) {
-        this.loading = false;
-        this.flash.showFlashMessage({
-          messages: [data.msg],
-          dismissible: true,
-          timeout: false,
-          type: "success"
-        });
-        this.clientes = data.clientes;
-      } else {
-        this.loading = false;
-        this.flash.showFlashMessage({
-          messages: [data.msg],
-          dismissible: true,
-          timeout: false,
-          type: "danger"
-        });
-      }
-    });
-  }
-
-  eliminar(item) {
-    this.clientes = this.clientes.filter(h => h !== item);
-  }
 }

@@ -25,7 +25,7 @@ export class PrimerInterceptor implements HttpInterceptor {
     }
     if (adminToken) {
       const adminTokenReq = req.clone({
-        setHeaders: { admintoken: adminToken }
+        setHeaders: { "x-access-token": adminToken }
       });
       return next.handle(adminTokenReq);
     } else {

@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
     this.comunicacionService.PrimerToken().subscribe((data: any) => {
       if (data) {
         if (!localStorage.getItem("MainToken")) {
-          localStorage.setItem("MainToken", data.token);
-        } 
+          localStorage.setItem("MainToken", data.tokena);
+        }
       } else {
         console.log("no data from server");
       }

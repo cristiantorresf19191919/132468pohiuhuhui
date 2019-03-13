@@ -46,7 +46,7 @@ export class ComunicacionService {
 
   PrimerToken() {
     return this.httpClient
-      .get(this.url + "/users/token", httpOptions)
+      .get(this.url + "/users/token?pagina=cumbre", httpOptions)
       .pipe(catchError(this.handleError("Obtener Datos")));
   }
   OperacionConId(id) {
@@ -91,7 +91,6 @@ export class ComunicacionService {
 
   storeUserData(token, user) {
     localStorage.setItem("id_token", token);
-    localStorage.setItem("user", JSON.stringify(user));
     localStorage.setItem("rol_user", user.rol);
     this.authToken = token;
     this.user = user;
@@ -143,7 +142,7 @@ export class ComunicacionService {
   }
   ObtenerClientes() {
     return this.httpClient
-      .get(this.url + "/users/obtener")
+      .get(this.url + "/users/admin/obtener",)
       .pipe(catchError(this.handleError("Obtener Clientes")));
   }
 

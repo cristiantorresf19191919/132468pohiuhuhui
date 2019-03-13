@@ -3,81 +3,81 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  
+
 }
 
 @font-face {
     font-family: "Muli-Regular";
     src: url("/assets/fonts/muli/Muli-Regular.ttf");
   }
-  
-  
+
+
    @font-face {
     font-family: "Muli-SemiBold";
     src: url("/assets/fonts/muli/Muli-SemiBold.ttf");
-  } 
-  
-  
+  }
+
+
   @font-face {
     font-family: "Poppins-Regular";
     src: url("/assets/fonts/poppins/Poppins-Regular.ttf");
   }
-  
-  
+
+
   @font-face {
     font-family: "Poppins-Medium";
     src: url("/assets/fonts/poppins/Poppins-Medium.ttf");
   }
-  
-  
+
+
   * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  
+
   body {
     font-family: "Poppins-Regular";
     font-size: 13px;
     margin: 0;
     color: #999;
   }
-  
+
   input, textarea, select {
     font-family: "Muli-Regular";
     font-size: 13px;
     color: #666;
   }
-  
+
   p, h1, h2, h3, h4, h5, h6, ul {
     margin: 0;
   }
-  
+
   img {
     max-width: 100%;
   }
-  
+
   ul {
     padding-left: 0;
     margin-bottom: 0;
   }
-  
+
   a {
     text-decoration: none;
   }
-  
+
   :focus {
     outline: none;
   }
-  
+
   .wrapper {
-   
+
     min-height: 100vh;
     position: relative;
     background: url("/assets/escalar.jpg") no-repeat right center;
-    background-size: cover;
+    background-size: 120%;
   }
-  
+
   .backycracky{
     background: url("/assets/tamed.jpg") no-repeat right center !important;
   }
@@ -100,17 +100,17 @@
   .yipee{
       position: absolute;
       width: 97%;
-    
+
       height: 2rem;
       z-index: 999;
   }
-  
+
   form {
     width: 100%;
     padding: 57px 46px 55px;
     background: #fff;
   }
-  
+
   select {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -118,7 +118,7 @@
   }
 
 
-  
+
   h3 {
     text-transform: uppercase;
     font-size: 35px;
@@ -129,7 +129,7 @@
     margin-bottom: 22px;
     font-weight: 500;
   }
-  
+
   .form-row {
     display: flex;
     flex-direction: column;
@@ -155,7 +155,7 @@
   form {
     padding: 10px;
   }
-  
+
   .form-wrapperas {
     position: relative;
     label {
@@ -180,7 +180,7 @@
       top: 43px;
     }
   }
- 
+
   .form-control {
     border: 1px solid #e6e6e6;
     display: block;
@@ -199,7 +199,7 @@
     }
 
   }
-  
+
   .checkbox {
     position: relative;
     padding-left: 22px;
@@ -216,7 +216,7 @@
       }
     }
   }
-  
+
   .checkmark {
     position: absolute;
     top: 3px;
@@ -239,7 +239,7 @@
       color: #333;
     }
   }
-  
+
   button {
     border: none;
     width: 173px;
@@ -294,13 +294,13 @@
       }
     }
   }
-  
+
   @media (max-width: 1199px) {
     .wrapper {
       background-position: center center;
     }
   }
-  
+
   @media (max-width: 991px) {
     .inner {
       width: 60%;
@@ -308,18 +308,18 @@
   }
   @media (max-width: 630px) {
       .wrapper, .inner{
-          
-     
-   
+
+
+
       }
 
-      
+
   }
-  
+
   @media (max-width: 767px) {
     .inner {
       width: 100%;
-      
+
       transform: translateY(0);
       position: static;
       padding: 0;
@@ -331,7 +331,7 @@
     }
     .wrapper {
       background: none;
-      margin-top: 6%; 
+      margin-top: 6%;
       display: block;
     }
 
@@ -340,13 +340,13 @@
     }
     form {
       padding: 30px 20px;
-     
+
     }
     .form-row {
       display: block;
       .form-wrapperas {
         width: 100% !important;
-        
+
         margin-bottom: 25px;
         &:first-child {
           margin-right: 0;
@@ -354,5 +354,5 @@
       }
     }
   }
-  
+
   /*# sourceMappingURL=style.css.map */

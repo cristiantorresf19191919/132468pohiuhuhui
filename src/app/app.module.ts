@@ -1,27 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {RouterModule} from '@angular/router';
-import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
-import { ContactoComponent } from './contacto/contacto.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegistroComponent } from './registro/registro.component';
-import { NgFlashMessagesModule } from 'ng-flash-messages';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { NgxLoadingModule } from 'ngx-loading';
-import { AdminComponent } from './admin/admin.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { PasswordModule } from "primeng/password";
-import {MessagesModule} from 'primeng/messages';
-import {MessageModule} from 'primeng/message';
-import {CheckboxModule} from 'primeng/checkbox';
-import {httpInterceptorProviders} from "./http-interceptors";
-
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
+import { AppComponent } from "./app.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { HeaderComponent } from "./header/header.component";
+import { HomeComponent } from "./home/home.component";
+import { ContactoComponent } from "./contacto/contacto.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { RegistroComponent } from "./registro/registro.component";
+import { LoginComponent } from "./login/login.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { httpInterceptorProviders } from "./http-interceptors";
+import { FooterComponent } from "./footer/footer.component";
+import { FontTagDirective } from "./directivas/font-tag.directive";
+import { ScrollaaDirective } from "./directivas/scrollaa.directive";
+import { ModuleadmincomponentModule } from "./shared/moduleadmincomponent.module";
+import { NgxLoadingModule } from "ngx-loading";
+import { NgFlashMessagesModule } from "ng-flash-messages";
+import { NgwWowModule } from 'ngx-wow';
 
 @NgModule({
   declarations: [
@@ -32,28 +30,24 @@ import {httpInterceptorProviders} from "./http-interceptors";
     RegistroComponent,
     LoginComponent,
     DashboardComponent,
-    AdminComponent
+    FooterComponent,
+    FontTagDirective,
+    ScrollaaDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     BrowserAnimationsModule,
-    PasswordModule,
-    CheckboxModule,
-    MessagesModule,
-    MessageModule,
     FormsModule,
-    PasswordModule,
-    CheckboxModule,
     HttpClientModule,
     ReactiveFormsModule,
+    ModuleadmincomponentModule,
+    NgxLoadingModule.forRoot({}),
     NgFlashMessagesModule,
-    NgxLoadingModule.forRoot({
-
-    })
+    NgwWowModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

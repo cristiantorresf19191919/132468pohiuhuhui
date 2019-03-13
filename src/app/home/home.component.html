@@ -1,3 +1,4 @@
+<app-header></app-header>
  <!-- start home section -->
 <div id="home" class="offset">
 
@@ -12,12 +13,12 @@
 <div class="row">
   <div class="col-12 video-container justify-content-center ">
       <video  autoplay width="100%" height="100%">
-        <source src="assets/1280x72025p.mp4" type="video/mp4" class="slideshow">
+        <source src="assets/CUMBREANDINAMEJOR.mp4" type="video/mp4" class="slideshow">
           </video>
   </div>
 </div>
 
-<div class="content" *ngIf="boolean" [@bounceInOutLeft]="boolean">
+<div  class="content" *ngIf="boolean" [@bounceInOutLeft]="boolean">
   <h1>Ventas</h1>
   <p>En Cumbre Andina tenemos diversos servicios en el muro de escalada, dependiendo de tu disponibilidad de tiempo con las siguientes opciones:
 
@@ -26,5 +27,6 @@
     - Tarjetera (10 ingresos)
 
     - Mensualidad</p>
-  <button id="myBtn" (click)="botones()"> <a href="https://www.facebook.com/pg/cumbreandinaciclismoyescalada/shop/?rid=232032350528180&rt=6">MarketPlace</a></button>
+  <button id="myBtn" (click)="botones()" appFontTag> <a href="https://www.facebook.com/pg/cumbreandinaciclismoyescalada/shop/?rid=232032350528180&rt=6"> MarketPlace</a></button>
 </div>
+<app-footer></app-footer>

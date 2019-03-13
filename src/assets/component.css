@@ -15,7 +15,7 @@ nav a {
 	display: inline-block;
 	margin: 15px 25px;
 	outline: none;
-	
+
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -117,7 +117,7 @@ nav a:focus {
 
 .csstransforms3d .cl-effect-2 a:hover span::before,
 .csstransforms3d .cl-effect-2 a:focus span::before {
-	background: #28a2ee;	
+	background: #28a2ee;
 }
 
 /* Effect 3: bottom line slides/fades in */
@@ -252,7 +252,7 @@ nav a:focus {
 
 .cl-effect-6 a:hover::after {
 	height: 100%;
-} 
+}
 
 /* Effect 7: second border slides up */
 .cl-effect-7 a {
@@ -427,7 +427,7 @@ nav a:focus {
 /* Effect 10: reveal, push out */
 .cl-effect-10  {
 	position: relative;
-	
+
 	z-index: 1;
 }
 
@@ -439,7 +439,7 @@ nav a:focus {
 .cl-effect-10 a span {
 	display: block;
 	padding: 10px 20px;
-	border: 1px solid rgba(0, 0, 255, 0.178);
+	/* border: 1px solid rgba(0, 0, 255, 0.178); */
 	background: #343a40;
 	-webkit-transition: -webkit-transform 0.3s;
 	-moz-transition: -moz-transform 0.3s;
@@ -470,7 +470,7 @@ nav a:focus {
 	-webkit-transform: translateX(100%);
 	-moz-transform: translateX(100%);
 	transform: translateX(100%);
-	
+
 }
 /* como va a estar aparece*/
 .cl-effect-10 a:hover::before,
@@ -478,11 +478,11 @@ nav a:focus {
 	-webkit-transform: translateX(0%);
 	-moz-transform: translateX(0%);
 	transform: translateX(0%);
-	
+
 	/* color: rgb(255, 126, 41); */
 	color: rgb(255, 145, 0);
 	opacity:1;
-	
+
 }
 
 /* Effect 11: text fill based on Lea Verou's animation http://dabblet.com/gist/6046779 */
@@ -491,7 +491,7 @@ nav a:focus {
 	border-top: 2px solid #0972b4;
 	color: #0972b4;
 	text-shadow: none;
-} 
+}
 
 .cl-effect-11 a::before {
 	position: absolute;
@@ -885,7 +885,7 @@ nav a:focus {
 
 .csstransforms3d .cl-effect-19 a:hover span::before,
 .csstransforms3d .cl-effect-19 a:focus span::before {
-	background: #ef5e50;	
+	background: #ef5e50;
 }
 
 /* Effect 20: 3D side */
@@ -944,7 +944,7 @@ nav a:focus {
 
 .cl-effect-20 a:hover span::before,
 .cl-effect-20 a:focus span::before {
-	-webkit-transform: rotateX(10deg);	
+	-webkit-transform: rotateX(10deg);
 	-moz-transform: rotateX(10deg);
 	transform: rotateX(10deg);
 }
