@@ -74,12 +74,14 @@ export class AdminComponent implements OnInit {
 
 
   mostrarUsuario(user) {
+    console.log(user);
+    
     Swal.fire(
       {
-        title:  `Mostrando Usuario` ,
+        title:  `Mostrando Cliente` ,
         type: 'info',
         width: 1000,
-        html: user,
+        html: `<p> ${user.nombre}</p><p> ${user.correo}</p>`,
         focusConfirm: false,
         confirmButtonText:
           ' OK!',
