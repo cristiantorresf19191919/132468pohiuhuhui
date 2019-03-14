@@ -12,18 +12,22 @@
 
 
 .content {
-    position: fixed;
-    bottom: 0;
+    position: Absolute;
+    top: 0;
     background: rgba(0, 0, 0, 0.5);
     color: #ffffff;
-    width: 100%;
-    padding: 20px;
+    width: 20%;
+    height: 60%;
+    padding: 10px;
   }
 
   #myBtn {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
     width: 200px;
-    font-size: 18px;
-    padding: 10px;
+    font-size: 20px;
+    padding: 15px;
     border: none;
     text-decoration: none;
     background: #000;
@@ -32,7 +36,7 @@
   }
   a{
     font-weight: bolder;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     color: white !important;
     text-decoration: none;
     &:hover{
