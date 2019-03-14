@@ -21,8 +21,6 @@
 }
 
 
-
-
 .boton{
   border: 1px solid white;
   margin-left: 3px !important;
@@ -112,6 +110,7 @@ hr{
     transform-origin: 0 0;
     transition: all 0.15s ease;
   }
+
   input {
     -webkit-appearance: none;
     width: 100%;
@@ -160,4 +159,7 @@ hr{
   position: fixed !important;
   z-index: 999999 !important;
 
+}
+.pulse{
+  position: absolute;
 }
