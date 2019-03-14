@@ -206,7 +206,7 @@
               class="d-flex flex-column flex-sm-row jus  animated bounceInUp justify-content-around "
             >
               <!-- pass -->
-              <div class="d-flex mx-1 m-10  mt-md-none clearfix">
+              <div class="d-flex mx-1 m-10  mt-md-none ">
                 <div>
                   <i
                     class="fa fa-key text-white mt-3 mr-2"
@@ -276,18 +276,18 @@
                  <!-- start passConfirme Val -->
                 <div
                  *ngIf="password2getter.invalid && (password2getter.dirty || password2getter.touched || submitted)">
-                    <div *ngIf="password2getter.errors.required" class="animated pulse">
+                    <div *ngIf="password2getter.errors.required" class="animated pulse ajusteMsjs">
                       <p-message severity="info" text="Por favor repita su Contraseña"></p-message>
 
                     </div>
-                    <div *ngIf="password2getter.errors.passwordInvalid" class="animated pulse">
+                    <div *ngIf="password2getter.errors.passwordInvalid" class="animated pulse ajusteMsjs">
                       <p-message severity="info" text="Debe tener al menos un numero!"></p-message>
                     </div>
 
-                    <div *ngIf="password2getter.errors.menosde4" class="animated pulse">
+                    <div *ngIf="password2getter.errors.menosde4" class="animated pulse ajusteMsjs">
                         <p-message severity="info" text="Debe ser mayor a 4 digitos"> </p-message>
                       </div>
-                    <div *ngIf="formReg.errors?.nomatch && password2getter.invalid" class="animated rubberBand pulse">
+                    <div *ngIf="formReg.errors?.nomatch && password2getter.invalid" class="animated rubberBand pulse ajusteMsjs">
                       <p-message severity="info" text="Las contraseñas deben ser iguales!"></p-message>
                     </div>
                </div>
@@ -306,9 +306,9 @@
 
             <!-- button -->
 
-            <div class="d-flex mx-1 m-10  mt-md-none justify-content-center pulse ">
-              <button class="btn btn-outline-dark " >Registrar</button>
-            </div>
+            <button data-text="Registrate" type="submit" [disabled]="!formReg.valid" [ngClass]="{'button-disableC': !formReg.valid}">
+                <span>Registrate</span>
+              </button>
 
             <!-- fin 4 row -->
           </div>
