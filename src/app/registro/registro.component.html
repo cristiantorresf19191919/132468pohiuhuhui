@@ -203,7 +203,7 @@
               class="d-flex flex-column flex-sm-row jus  animated bounceInUp justify-content-around "
             >
               <!-- pass -->
-              <div class="d-flex mx-1 m-10  mt-md-none ">
+              <div class="d-flex mx-1 m-10  mt-md-none clearfix">
                 <div>
                   <i
                     class="fa fa-key text-white mt-3 mr-2"
@@ -226,8 +226,8 @@
                   </label>
 
                   <!-- start pass val -->
-                  <div *ngIf="passwordgetter.invalid && (passwordgetter.dirty || passwordgetter.touched || submitted)">
-                    <div *ngIf="passwordgetter.errors.required" class="animated pulse">
+                  <div  *ngIf="passwordgetter.invalid && (passwordgetter.dirty || passwordgetter.touched || submitted)"class="pulse">
+                    <div *ngIf="passwordgetter.errors.required" class="animated">
                       <p-message severity="info" text="Ingrese su Contraseña!"></p-message>
                     </div>
 
