@@ -12,18 +12,18 @@
             <div
             class="col-12 mb-5 mt-md-0 mt-5 text-center text-md-left border border-secundary w-100"
           >
-            <h1
+            <h2
               class="h1-responsive font-weight-bold text-white bg-dark animated fadeInLeft text-center"
             >
               <i class="fas fa-user text-white"></i> Registrarte
-            </h1>
+            </h2>
             <hr
               class="hr-blanco animated fadeInLeft clearfix"
               style="color:white !important"
             />
             <h6 class="mb-3 animated fadeInLeft text-white text-center">
-              Registrate en Cumbre Andina y recibe descuentos, notificaciones de
-              nuestros eventos y mas
+              Registrate y recibe descuentos, notificaciones de
+              nuestros eventos y mas...
             </h6>
             <!-- Primer row -->
             <div
@@ -43,7 +43,7 @@
                     <input
                       type="text"
                       class="text-white font-weight-bold "
-                      id="inp"
+                      id="inpName"
                       placeholder="&nbsp;"
                       formControlName="name"
                       [ngClass]="{'is-invalid-icon':namegetter.invalid && namegetter.touched}"
@@ -54,10 +54,15 @@
                 </div>
                 <!-- name validaciones -->
                 <div *ngIf="namegetter.invalid && (namegetter.dirty || namegetter.touched || submitted)">
+<<<<<<< HEAD
 
                     <div *ngIf="namegetter.errors.required" class="animated pulse position-absolute">
                       <label class="label text-white inp " for="inp">OLVIDASTE COLOCAR TU NOMBRE</label>
 
+=======
+                    <div *ngIf="namegetter.errors.required" class="animated pulse">
+                      <label class="label text-white inp " for="inpName">Olvidaste colocar Tu Nombre</label>
+>>>>>>> Ajustes-de-Apariencia
                     </div>
                   </div>
                 <!-- fin name validacones -->
@@ -74,11 +79,11 @@
                   ></i>
                 </div>
                 <div>
-                  <label for="inp" class="inp">
+                  <label for="inpEmail" class="inp">
                     <input
                       type="text"
                       class="text-white font-weight-bold "
-                      id="inp"
+                      id="inpEmail"
                       placeholder="&nbsp;"
                       formControlName="Email"
                       [ngClass]="{'is-invalid-icon':namegetter.invalid && namegetter.touched}"
@@ -90,11 +95,18 @@
                 <!-- correo validaciones -->
                 <div *ngIf="Emailgetter.invalid && (Emailgetter.dirty || Emailgetter.touched || submitted)">
 
+<<<<<<< HEAD
                     <div *ngIf="Emailgetter.errors.tieneArroba" class="animated pulse position-absolute">
                       <label class="label text-white inp " for="inp">Te falto poner Arroba</label>
                     </div>
+=======
+                    <div *ngIf="Emailgetter.errors.tieneArroba" class="animated pulse">
+                        <p-message severity="info" text="Te falto poner la Arroba @"> </p-message>
+>>>>>>> Ajustes-de-Apariencia
 
+                    </div>
 
+<<<<<<< HEAD
                     <div *ngIf="Emailgetter.errors.required" class="animated pulse position-absolute">
                       <p-message severity="success" text="Ingresa tu Email por favor..!"></p-message>
 
@@ -106,6 +118,20 @@
                     </div>
                     <div *ngIf="Emailgetter.errors?.correoExiste" class="animated pulse position-absolute">
                       <p-message severity="warn" text="El correo ya se encuentra en nuetra base de datos"> </p-message>
+=======
+                    <div *ngIf="Emailgetter.errors.required" class="animated pulse">
+                      <p-message severity="info" text="Ingresa tu Email por favor..!"></p-message>
+                    </div>
+
+                    <div *ngIf="Emailgetter.errors.email" class="animated pulse">
+                        <p-message severity="info" text="Parece que digitaste mal el correo!"> </p-message>
+
+
+                    </div>
+
+                    <div *ngIf="Emailgetter.errors?.correoExiste" class="animated pulse">
+                      <p-message severity="warn" text="El correo ya Esta Registrado"> </p-message>
+>>>>>>> Ajustes-de-Apariencia
                     </div>
 
                 </div>
@@ -127,30 +153,29 @@
                     style="font-size:30px; color:orange !important;"
                     [ngClass]="{'is-invalid-icon':Telefonogetter.invalid && Telefonogetter.touched}">
 
-                  ></i>
+                  </i>
                 </div>
                 <div>
-                  <label for="inp" class="inp">
+                  <label for="inpPhone" class="inp">
                     <input
                       type="text"
                       class="text-white font-weight-bold "
-                      id="inp"
+                      id="inpPhone"
                       placeholder="&nbsp;"
                       formControlName="Telefono"
-                      [ngClass]="{'is-invalid-icon':Telefonogetter.invalid && Telefonogetter.touched}">
+                      [ngClass]="{'is-invalid-icon':Telefonogetter.invalid && Telefonogetter.touched}"
                     />
                     <span class="label text-white">Tu Telefono</span>
                     <span class="borderA"></span>
                   </label>
                 </div>
                 <!-- start valida cel -->
-                <div
-            *ngIf="Telefonogetter.invalid && (Telefonogetter.dirty || Telefonogetter.touched || submitted)">
-            <div *ngIf="Telefonogetter.errors.required" class="animated heartBeat">
+                <div *ngIf="Telefonogetter.invalid && (Telefonogetter.dirty || Telefonogetter.touched || submitted)">
+            <div *ngIf="Telefonogetter.errors.required" class="animated heartBeat pulse">
               <p-message severity="info" text="Ingresa tu Celular.!"></p-message>
-
             </div>
-            <div *ngIf="Telefonogetter.errors.tieneNumero" class="animated heartBeat">
+
+            <div *ngIf="Telefonogetter.errors.tieneNumero" class="animated heartBeat pulse">
                 <p-message severity="info" text="Sin letras por favor.!"></p-message>
 
               </div>
@@ -173,11 +198,11 @@
                   ></i>
                 </div>
                 <div>
-                  <label for="inp" class="inp">
+                  <label for="inpId" class="inp">
                     <input
                       type="text"
                       class="text-white font-weight-bold "
-                      id="inp"
+                      id="inpId"
                       formControlName="cc"
                       [ngClass]="{'is-invalid-icon':ccgetter.invalid && ccgetter.touched}"
                       placeholder="&nbsp;"
@@ -187,15 +212,12 @@
                   </label>
                 </div>
                 <!-- start cc validate -->
-                <div
-                *ngIf="ccgetter.invalid && (ccgetter.dirty || ccgetter.touched || submitted)">
-                <div *ngIf="ccgetter.errors.required" class="animated heartBeat">
-                  <p-message severity="info" text="Ingresa tu Celular.!"></p-message>
-
-                </div>
-                <div *ngIf="ccgetter.errors.tieneNumero" class="animated heartBeat">
-                    <p-message severity="info" text="Sin letras por favor.!"></p-message>
-
+                <div *ngIf="ccgetter.invalid && (ccgetter.dirty || ccgetter.touched || submitted)">
+                  <div *ngIf="ccgetter.errors.required" class="animated heartBeat pulse">
+                    <p-message severity="info" text="Ingresa tu Id"></p-message>
+                  </div>
+                  <div *ngIf="ccgetter.errors.tieneNumero" class="animated heartBeat pulse">
+                    <p-message severity="info" text="Sin letras por favor!"></p-message>
                   </div>
               </div>
                 <!-- fin cc validate -->
@@ -211,7 +233,7 @@
               class="d-flex flex-column flex-sm-row jus  animated bounceInUp justify-content-around "
             >
               <!-- pass -->
-              <div class="d-flex mx-1 m-10  mt-md-none ">
+              <div class="d-flex mx-1 m-10  mt-md-none clearfix">
                 <div>
                   <i
                     class="fa fa-key text-white mt-3 mr-2"
@@ -220,12 +242,12 @@
                   ></i>
                 </div>
                 <div>
-                  <label for="inp" class="inp">
+                  <label for="inpPass" class="inp">
                     <input
                       type="text"
                       formControlName="password"
                       class="text-white font-weight-bold "
-                      id="inp"
+                      id="inpPass"
                       [ngClass]="{'is-invalid':passwordgetter.invalid && passwordgetter.touched}"
                       placeholder="&nbsp;"
                     />
@@ -234,21 +256,19 @@
                   </label>
 
                   <!-- start pass val -->
-                  <div
-                  *ngIf="passwordgetter.invalid && (passwordgetter.dirty || passwordgetter.touched || submitted)">
-                  <div *ngIf="passwordgetter.errors.required" class="animated pulse">
-                    <p-message severity="info" text="Se requiere que ingrese su Contraseña!"></p-message>
+                  <div  *ngIf="passwordgetter.invalid && (passwordgetter.dirty || passwordgetter.touched || submitted)" >
+                    <div *ngIf="passwordgetter.errors.required" class="animated pulse" id="divAdver">
+                      <p-message severity="info" text="Ingrese su Contraseña!"></p-message>
+                    </div>
 
-                  </div>
-                  <div *ngIf="passwordgetter.errors.passwordInvalid" class="animated pulse">
-                    <p-message severity="info" text="Debe tener al menos un numero!"></p-message>
+                    <div *ngIf="passwordgetter.errors.passwordInvalid" class="animated pulse">
+                      <p-message severity="info" text="Debe tener al menos un numero!"></p-message>
 
-                  </div>
+                    </div>
 
-                  <div *ngIf="passwordgetter.errors.menosde4" class="animated pulse">
-                    <p-message severity="info" text="Debe ser mayor a 4 digitos"> </p-message>
-                  </div>
-
+                    <div *ngIf="passwordgetter.errors.menosde4" class="animated pulse">
+                      <p-message severity="info" text="Debe ser mayor a 4 digitos"> </p-message>
+                    </div>
                 </div>
                   <!-- fin pass val -->
                 </div>
@@ -262,14 +282,14 @@
                     class="fas fa-clipboard-check text-white mt-3 mr-2"
                     [ngClass]="{'is-invalid':password2getter.invalid && password2getter.touched }"
                     style="font-size:30px; color:orange !important;"
-                  ></i>
+                  > </i>
                 </div>
                 <div>
-                  <label for="inp" class="inp">
+                  <label for="inpPass2" class="inp">
                     <input
                       type="text"
                       class="text-white font-weight-bold "
-                      id="inp"
+                      id="inpPass2"
                       formControlName="password2"
                       [ngClass]="{'is-invalid':password2getter.invalid && password2getter.touched }"
                       placeholder="&nbsp;"
@@ -281,24 +301,22 @@
 
                 </div>
                  <!-- start passConfirme Val -->
-                 <div
+                <div
                  *ngIf="password2getter.invalid && (password2getter.dirty || password2getter.touched || submitted)">
-                 <div *ngIf="password2getter.errors.required" class="animated pulse">
-                   <p-message severity="info" text="Se requiere que ingrese su Contraseña!"></p-message>
+                    <div *ngIf="password2getter.errors.required" class="animated pulse">
+                      <p-message severity="info" text="Por favor repita su Contraseña"></p-message>
 
-                 </div>
-                 <div *ngIf="password2getter.errors.passwordInvalid" class="animated pulse">
-                   <p-message severity="info" text="Debe tener al menos un numero!"></p-message>
+                    </div>
+                    <div *ngIf="password2getter.errors.passwordInvalid" class="animated pulse">
+                      <p-message severity="info" text="Debe tener al menos un numero!"></p-message>
+                    </div>
 
-                 </div>
-
-                 <div *ngIf="password2getter.errors.menosde4" class="animated pulse">
-                    <p-message severity="info" text="Debe ser mayor a 4 digitos"> </p-message>
-                  </div>
-                 <div *ngIf="formReg.errors?.nomatch && password2getter.invalid" class="animated rubberBand">
-                   <p-message severity="info" text=" Se requiere que las contraseñas ingresadas sean iguales!"></p-message>
-
-                 </div>
+                    <div *ngIf="password2getter.errors.menosde4" class="animated pulse">
+                        <p-message severity="info" text="Debe ser mayor a 4 digitos"> </p-message>
+                      </div>
+                    <div *ngIf="formReg.errors?.nomatch && password2getter.invalid" class="animated rubberBand pulse">
+                      <p-message severity="info" text="Las contraseñas deben ser iguales!"></p-message>
+                    </div>
                </div>
                        <!-- end passConfirme Val -->
               </div>
@@ -315,8 +333,8 @@
 
             <!-- button -->
 
-            <div class="d-flex mx-1 m-10  mt-md-none justify-content-center">
-              <button class="btn btn-outline-dark " > registrar</button>
+            <div class="d-flex mx-1 m-10  mt-md-none justify-content-center pulse ">
+              <button class="btn btn-outline-dark " >Registrar</button>
             </div>
 
             <!-- fin 4 row -->
