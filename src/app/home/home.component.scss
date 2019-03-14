@@ -12,14 +12,16 @@
 
 
 .content {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     color: #ffffff;
     width: 100%;
     padding: 20px;
   }
-
+#home{
+  position: absolute;
+}
   #myBtn {
     width: 200px;
     font-size: 18px;
@@ -46,3 +48,5 @@
     background: #ddd;
     color: black;
   }
+
+ 
