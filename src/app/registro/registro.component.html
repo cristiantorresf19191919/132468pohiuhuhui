@@ -54,15 +54,8 @@
                 </div>
                 <!-- name validaciones -->
                 <div *ngIf="namegetter.invalid && (namegetter.dirty || namegetter.touched || submitted)">
-<<<<<<< HEAD
-
-                    <div *ngIf="namegetter.errors.required" class="animated pulse position-absolute">
-                      <label class="label text-white inp " for="inp">OLVIDASTE COLOCAR TU NOMBRE</label>
-
-=======
                     <div *ngIf="namegetter.errors.required" class="animated pulse">
                       <label class="label text-white inp " for="inpName">Olvidaste colocar Tu Nombre</label>
->>>>>>> Ajustes-de-Apariencia
                     </div>
                   </div>
                 <!-- fin name validacones -->
@@ -95,30 +88,11 @@
                 <!-- correo validaciones -->
                 <div *ngIf="Emailgetter.invalid && (Emailgetter.dirty || Emailgetter.touched || submitted)">
 
-<<<<<<< HEAD
-                    <div *ngIf="Emailgetter.errors.tieneArroba" class="animated pulse position-absolute">
-                      <label class="label text-white inp " for="inp">Te falto poner Arroba</label>
-                    </div>
-=======
                     <div *ngIf="Emailgetter.errors.tieneArroba" class="animated pulse">
                         <p-message severity="info" text="Te falto poner la Arroba @"> </p-message>
->>>>>>> Ajustes-de-Apariencia
 
                     </div>
 
-<<<<<<< HEAD
-                    <div *ngIf="Emailgetter.errors.required" class="animated pulse position-absolute">
-                      <p-message severity="success" text="Ingresa tu Email por favor..!"></p-message>
-
-                    </div>
-                    <div *ngIf="Emailgetter.errors.email" class="animated pulse position-absolute">
-                        <label class="label text-white inp " for="inp">Parece que digitaste mal el correo!</label>
-
-
-                    </div>
-                    <div *ngIf="Emailgetter.errors?.correoExiste" class="animated pulse position-absolute">
-                      <p-message severity="warn" text="El correo ya se encuentra en nuetra base de datos"> </p-message>
-=======
                     <div *ngIf="Emailgetter.errors.required" class="animated pulse">
                       <p-message severity="info" text="Ingresa tu Email por favor..!"></p-message>
                     </div>
@@ -131,7 +105,6 @@
 
                     <div *ngIf="Emailgetter.errors?.correoExiste" class="animated pulse">
                       <p-message severity="warn" text="El correo ya Esta Registrado"> </p-message>
->>>>>>> Ajustes-de-Apariencia
                     </div>
 
                 </div>
@@ -256,8 +229,8 @@
                   </label>
 
                   <!-- start pass val -->
-                  <div  *ngIf="passwordgetter.invalid && (passwordgetter.dirty || passwordgetter.touched || submitted)" >
-                    <div *ngIf="passwordgetter.errors.required" class="animated pulse" id="divAdver">
+                  <div  *ngIf="passwordgetter.invalid && (passwordgetter.dirty || passwordgetter.touched || submitted)"class="pulse">
+                    <div *ngIf="passwordgetter.errors.required" class="animated" id="divAdver">
                       <p-message severity="info" text="Ingrese su Contraseña!"></p-message>
                     </div>
 
