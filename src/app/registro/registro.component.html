@@ -227,7 +227,7 @@
 
                   <!-- start pass val -->
                   <div  *ngIf="passwordgetter.invalid && (passwordgetter.dirty || passwordgetter.touched || submitted)"class="pulse">
-                    <div *ngIf="passwordgetter.errors.required" class="animated">
+                    <div *ngIf="passwordgetter.errors.required" class="animated" id="divAdver">
                       <p-message severity="info" text="Ingrese su Contraseña!"></p-message>
                     </div>
 
