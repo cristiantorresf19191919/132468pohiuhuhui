@@ -89,15 +89,18 @@
                 <div *ngIf="Emailgetter.invalid && (Emailgetter.dirty || Emailgetter.touched || submitted)">
 
                     <div *ngIf="Emailgetter.errors.tieneArroba" class="animated pulse">
-                      <label class="label text-white inp " for="inpEmail">Te falto poner la Arroba @</label>
+                        <p-message severity="info" text="Te falto poner la Arroba @"> </p-message>
+
                     </div>
 
                     <div *ngIf="Emailgetter.errors.required" class="animated pulse">
                       <p-message severity="info" text="Ingresa tu Email por favor..!"></p-message>
                     </div>
-                    
+
                     <div *ngIf="Emailgetter.errors.email" class="animated pulse">
-                        <label class="label text-white inp" for="inpEmail">Parece que digitaste mal el correo!</label>
+                        <p-message severity="info" text="Parece que digitaste mal el correo!"> </p-message>
+
+
                     </div>
 
                     <div *ngIf="Emailgetter.errors?.correoExiste" class="animated pulse">
@@ -226,8 +229,8 @@
                   </label>
 
                   <!-- start pass val -->
-                  <div  *ngIf="passwordgetter.invalid && (passwordgetter.dirty || passwordgetter.touched || submitted)"class="pulse">
-                    <div *ngIf="passwordgetter.errors.required" class="animated" id="divAdver">
+                  <div  *ngIf="passwordgetter.invalid && (passwordgetter.dirty || passwordgetter.touched || submitted)" >
+                    <div *ngIf="passwordgetter.errors.required" class="animated pulse" id="divAdver">
                       <p-message severity="info" text="Ingrese su Contraseña!"></p-message>
                     </div>
 
