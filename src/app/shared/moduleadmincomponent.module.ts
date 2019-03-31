@@ -18,6 +18,7 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NgFlashMessagesModule } from 'ng-flash-messages';
 import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatMenuModule, MatIconModule, MatBadgeModule,
   MatSidenavModule,  MatListModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatRadioModule,
   MatDatepickerModule, MatNativeDateModule, MatTabsModule, MatCardModule} from '@angular/material';
@@ -38,6 +39,7 @@ import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatMenuModule, Mat
     AccordionModule,
     ButtonModule,
     BrowserAnimationsModule,
+    NgFlashMessagesModule,
     [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatMenuModule, MatIconModule, MatBadgeModule,
       MatSidenavModule, MatListModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatRadioModule,
       MatDatepickerModule, MatNativeDateModule, MatTabsModule, MatCardModule]
@@ -63,6 +65,7 @@ import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatMenuModule, Mat
     MessagesModule,
     MessageModule,
     BrowserAnimationsModule,
+    NgFlashMessagesModule,
     [MatButtonModule,
       MatCheckboxModule,
       MatToolbarModule,

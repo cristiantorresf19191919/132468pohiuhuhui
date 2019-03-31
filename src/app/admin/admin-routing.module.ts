@@ -5,6 +5,7 @@ import { DashboardchildComponent } from "./adminChildComponents/dashboardchild/d
 import { SettingsChildComponent } from "./adminChildComponents/settings-child/settings-child.component";
 import { AdminComponent } from "./admin.component";
 import { DashboardComponent } from "../dashboard/dashboard.component";
+import { ModuleadmincomponentModule } from '.././shared/moduleadmincomponent.module';
 
 /* const rutasAdmin: Routes = [
   {
@@ -46,6 +47,6 @@ const rutasAdmin: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(rutasAdmin)],
-  exports: [RouterModule]
+  exports: [RouterModule, ModuleadmincomponentModule]
 })
 export class AdminRoutingModule {}
