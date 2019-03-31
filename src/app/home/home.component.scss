@@ -15,9 +15,7 @@
   position: absolute;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  color: #ffffff;
-  width: 100%;
-  padding: 20px;
+  color: #ffffff;  
 }
 #home{
 position: absolute;
@@ -48,4 +46,7 @@ a{
   background: #ddd;
   color: black;
 }
-
+.padding-left-right-0 {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}

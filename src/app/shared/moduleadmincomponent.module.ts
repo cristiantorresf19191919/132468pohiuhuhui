@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { MatMenuModule } from "@angular/material/menu";
 import { PanelMenuModule } from "primeng/panelmenu";
 import { MenuModule } from "primeng/menu";
 import { MegaMenuModule } from "primeng/megamenu";
@@ -18,7 +17,9 @@ import { PasswordModule } from 'primeng/password';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-
+import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatMenuModule, MatIconModule, MatBadgeModule,
+  MatSidenavModule,  MatListModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatRadioModule,
+  MatDatepickerModule, MatNativeDateModule, MatTabsModule, MatCardModule} from '@angular/material';
 @NgModule({
   declarations: [],
   imports: [
@@ -30,17 +31,14 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
     DataTableModule,
     PanelMenuModule,
     MenuModule,
-    MegaMenuModule,
-    MatMenuModule,
+    MegaMenuModule,    
     RadioButtonModule,
     PanelModule,
     AccordionModule,
     ButtonModule,
-
-
-
-
-
+    [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatMenuModule, MatIconModule, MatBadgeModule,
+      MatSidenavModule, MatListModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatRadioModule,
+      MatDatepickerModule, MatNativeDateModule, MatTabsModule, MatCardModule]
 
   ],
   exports: [
@@ -58,17 +56,26 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
     PanelModule,
     AccordionModule,
     ButtonModule,
-
-
-
-
     CheckboxModule,
     PasswordModule,
     MessagesModule,
-    MessageModule
-
-
-
+    MessageModule,
+    [MatButtonModule,
+      MatCheckboxModule,
+      MatToolbarModule,
+      MatMenuModule,
+      MatIconModule,
+      MatBadgeModule,
+      MatSidenavModule,
+      MatListModule,
+      MatFormFieldModule,
+      MatInputModule,
+      MatSelectModule,
+      MatRadioModule,
+      MatDatepickerModule,
+      MatNativeDateModule,
+      MatTabsModule,
+      MatCardModule]
   ]
 
 })
