@@ -1,4 +1,4 @@
-import { BrowserModule } from "@angular/platform-browser";
+import { CommonModule } from '@angular/common';
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
@@ -7,7 +7,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HeaderComponent } from "./header/header.component";
 import { HomeComponent } from "./home/home.component";
 import { ContactoComponent } from "./contacto/contacto.component";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RegistroComponent } from "./registro/registro.component";
 import { LoginComponent } from "./login/login.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
@@ -35,10 +34,9 @@ import { NgwWowModule } from 'ngx-wow';
     ScrollaaDirective
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     AppRoutingModule,
     RouterModule,
-    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,

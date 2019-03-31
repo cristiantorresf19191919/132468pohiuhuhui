@@ -1,8 +1,10 @@
-<br>
-<input type="text" class="form-control" placeholder="Cuantas Filas Quieres Ver Por Pagina" [(ngModel)]="filas" name="filas" aria-label="Username" aria-describedby="basic-addon1">
-<button class="btn btn-primary text-center" (click)="reset()"> Activ/Desac Paginador</button>
-<!-- <i class="pi pi-spin pi-spinner" style="font-size: 3em"></i> -->
-<i class="pi pi-check" style="font-size: 4em" ></i>
+<div class="dashboard-table-block">
+<div class="dashboard-search-box">
+    <input matInput type="text" class="form-control" placeholder="Cuantas Filas Quieres Ver Por Pagina" [(ngModel)]="filas" name="filas" aria-label="Username" aria-describedby="basic-addon1">
+    <button class="btn btn-primary text-center" (click)="reset()"> Activ/Desac Paginador</button>
+    <!-- <i class="pi pi-spin pi-spinner" style="font-size: 3em"></i> -->
+    <i class="pi pi-check" style="font-size: 4em" ></i>
+</div>
 
 <p-table #tt [value]="clientes" [columns]="cols" [paginator]="paginator" [rows]="filas" sortMode="multiple" [multiSortMeta]="multiSortMeta" class="animated tada">
   <ng-template pTemplate="caption">
@@ -79,5 +81,5 @@
     Hay {{clientes?.length}} clientes Registrados
 </ng-template>
 </p-table>
-
+</div>
 

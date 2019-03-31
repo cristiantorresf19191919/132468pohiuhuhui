@@ -17,6 +17,7 @@ import { PasswordModule } from 'primeng/password';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatMenuModule, MatIconModule, MatBadgeModule,
   MatSidenavModule,  MatListModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatRadioModule,
   MatDatepickerModule, MatNativeDateModule, MatTabsModule, MatCardModule} from '@angular/material';
@@ -36,6 +37,7 @@ import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatMenuModule, Mat
     PanelModule,
     AccordionModule,
     ButtonModule,
+    BrowserAnimationsModule,
     [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatMenuModule, MatIconModule, MatBadgeModule,
       MatSidenavModule, MatListModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatRadioModule,
       MatDatepickerModule, MatNativeDateModule, MatTabsModule, MatCardModule]
@@ -60,6 +62,7 @@ import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatMenuModule, Mat
     PasswordModule,
     MessagesModule,
     MessageModule,
+    BrowserAnimationsModule,
     [MatButtonModule,
       MatCheckboxModule,
       MatToolbarModule,

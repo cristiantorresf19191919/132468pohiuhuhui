@@ -1,6 +1,4 @@
 import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CommonModule } from "@angular/common";
 import { PasswordModule } from "primeng/password";
 import { Routes, RouterModule } from "@angular/router";
@@ -32,8 +30,6 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forRoot(routes),
-    BrowserModule,
-    BrowserAnimationsModule,
     PasswordModule
   ]
 })
