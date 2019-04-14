@@ -1,112 +1,22 @@
-<app-header></app-header>
-<div class="wrapper ">
-  <div class="inner ">
-    <div class="yipee border border-primary   animated bounce hvr-grow">
-      <h3 class=" text-white bg-gradient-dark  ">Inicia Sesión</h3>
-    </div>
-    <br />
-
-    <form
-      (submit)="go()"
-      [formGroup]="LoginDaddy"
-      class="border border-primary animated bounce backycracky"
-    >
-      <div class="form-row ">
-        <div class="form-wrapperas mt-1 primerElemento">
-          <label for="" class="hvr-wobble-horizontal">Correo </label>
-          <input
-            type="text"
-            class="form-control "
-            placeholder="Correo"
-            name="Email"
-            formControlName="Email"
-            required
-            [ngClass]="{'is-invalid': Emailgetter.errors?.correoExiste}"
-          />
-        </div>
-        <!-- mensaje validacion Correo -->
-        <div
-          *ngIf="
-            Emailgetter.invalid &&
-            (Emailgetter.dirty || Emailgetter.touched || submitted)
-          "
-        >
-          <div *ngIf="Emailgetter.errors.tieneArroba" class="animated pulse">
-            <p-message severity="info" text="Te falto poner Arroba"></p-message>
-          </div>
-          <div *ngIf="Emailgetter.errors.required" class="animated pulse">
-            <p-message
-              severity="info"
-              text="Ingresa tu Email por favor..!"
-            ></p-message>
-          </div>
-          <div *ngIf="Emailgetter.errors?.correoExiste" class="animated pulse">
-            <p-message
-              severity="warn"
-              text="El correo no se encuentra registrado aun en la base de datos"
-            >
-            </p-message>
-          </div>
-        </div>
-        <!-- fin de mensaje validacion correo -->
-
-        <div class="form-wrapperas mt-1">
-          <label for="" class="hvr-wobble-horizontal">Contraseña</label>
-          <input type="password" class="form-control" placeholder="Contraseña"
-          formControlName="Password" required>
+<div class="row">
+  <div class="col-md-6 mx-auto border justify-content-center">
+    <img src="assets/logo.jpg" alt="e-commerce" class="img-fluid ml-5 mx-auto rounded mx-auto d-block" style="width: 200px"     >
+    <h3 class="text-center">Account Login</h3>
+      <form (submit)="go()" >
+        <div class="form-group">
+          <label for="email" class="float-left">email</label>
+          <input type="email" class="form-control" name="Email" [(ngModel)]="Email">
+        
         </div>
 
-        <div class="sin-clase">
-          <p-checkbox
-            class="form-control-checkbox border border-primary"
-            binary="true"
-            formControlName="recordarD"
-            required
-          ></p-checkbox>
-          <label
-            class="hvr-wobble-horizontal mt-1 recordar-datos d-inline border "
-            >Recordar Datos</label
-          >
-          <div *ngIf="recordarD">
-            <label for="" class="mt-1 d-block"
-              >el estado es => {{ recordarD.toString() }}</label
-            >
-          </div>
+        <div class="form-group">
+          <label for="password" class="float-left">password</label>
+          <input type="password" class="form-control" name="Password" [(ngModel)]="Password">
+
         </div>
-      </div>
-
-      <button data-text="ESCALA" type="submit">
-        <span>Entrar</span>
-      </button>
-      <ng-flash-message></ng-flash-message>
-    </form>
-
+        <button type="submit" class="btn btn-primary">Login</button>
+        <ng-flash-message></ng-flash-message>
+      </form>
+    
   </div>
 </div>
-
-<div class="loading">
-  <ng-template #customLoadingTemplate>
-    <div class="custom-class">
-      <h3>
-        Loading...
-      </h3>
-      <button (click)="showAlert()">
-        Click me!
-      </button>
-    </div>
-  </ng-template>
-
-  <ngx-loading
-    [show]="loading"
-    [config]="{
-      animationType: ngxLoadingAnimationTypes.chasingDots,
-      primaryColour: primaryColour,
-      secondaryColour: secondaryColour,
-      fullScreenBackdrop: fullscreenloadingdecision,
-      backdropBorderRadius: radio,
-      backdropBackgroundColour: colorback
-    }"
-    [template]="loadingTemplate"
-  ></ngx-loading>
-</div>
-<app-footer></app-footer>

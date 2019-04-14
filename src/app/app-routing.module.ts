@@ -1,40 +1,24 @@
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { CommonModule } from "@angular/common";
-import { PasswordModule } from "primeng/password";
-import { Routes, RouterModule } from "@angular/router";
-import { HeaderComponent } from "./header/header.component";
-import { HomeComponent } from "./home/home.component";
-import { RegistroComponent } from "./registro/registro.component";
-import { LoginComponent } from "./login/login.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
-import { AuthGuard } from "./servicios/auth.guard";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import {AboutComponent} from './about/about.component';
+import {HomeComponent} from './home/home.component';
+import {IdeasaddComponent} from './ideasadd/ideasadd.component';
+import {IdeasComponent} from './ideas/ideas.component';
+import {EditVideoComponent} from './edit-video/edit-video.component';
+import {RegistrationComponent} from './registration/registration.component';
+import {LoginComponent} from './login/login.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "/home", pathMatch: "full", data: { state: "home" } },
-  { path: "header", component: HeaderComponent },
-  { path: "home", component: HomeComponent },
-  { path: "registro", component: RegistroComponent, data: { state: "about" } },
-  { path: "login", component: LoginComponent, data: { state: "login" } },
-  {
-    path: "dashboard",
-    component: DashboardComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "admin",
-    loadChildren: "./admin/admin-module.module#AdminModuleModule"
+{path:'Login',component:LoginComponent},
+{path:'Registro',component:RegistrationComponent},
+{path:'EditVideo/:id',component:EditVideoComponent},  
+{path:"IdeasDone", component:IdeasComponent},
+{path:"Home", component:HomeComponent},
+{path:"About", component:AboutComponent},
+{path:"Ideas",component:IdeasaddComponent}];
 
-  }
-];
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes),
-    BrowserModule,
-    BrowserAnimationsModule,
-    PasswordModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -1,0 +1,30 @@
+
+<h1>Modifica tu producto</h1>
+<br>
+<h1 class="text-primary">{{editVideo.title}}</h1>
+<h4 class="text-secundary">Detalles: {{editVideo.details}}</h4>
+<h3 class="text-white bg-dark"> Fecha del producto {{editVideo.date | date:'medium'}} </h3>
+<p class="text-danger display-4"> Id {{editVideo._id}}</p>
+
+<form (submit)="Putmethod()">
+    
+    <div class="form-group">
+      
+      <label for="title">Producto</label>
+      <input [(ngModel)]="editVideo.title" name="editVideo.title" type="text" class="form-control" value="">
+      
+    </div>
+
+    <div class="form-group">
+      <label for="title">Precio</label>
+      <textarea name="details" class="form-control" [(ngModel)]="editVideo.details">
+
+      </textarea>  
+      <button type="submit" class="btn btn-dark">
+        Modificar
+      </button>    
+     
+    </div>
+  </form>
+  <ng-flash-message></ng-flash-message>
+

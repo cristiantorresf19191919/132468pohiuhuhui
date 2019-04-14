@@ -1,0 +1,30 @@
+<div class="card card-body">
+
+  <h3>Agrega tu Producto</h3>
+
+  <form (submit)="botoLogin()">
+
+    <div class="form-group">
+      <label for="title">Producto</label>
+      <input [(ngModel)]="titulo" name="titulo" type="text" class="form-control" #ina>
+      
+    </div>
+
+    <div class="form-group">
+      <label for="title">Precio y Detalles</label>
+      <textarea name="details" class="form-control" [(ngModel)]="details" #in>
+
+      </textarea>  
+      <button type="submit" class="btn btn-dark" (click)="in.value='';ina.value=''">
+        GO...
+      </button>    
+    </div>
+  </form>
+  <ng-flash-message></ng-flash-message>
+
+  
+    
+ 
+
+
+</div>

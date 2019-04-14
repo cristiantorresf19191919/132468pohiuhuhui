@@ -1,53 +1,43 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
-import { HttpClientModule } from "@angular/common/http";
-import { AppComponent } from "./app.component";
-import { AppRoutingModule } from "./app-routing.module";
-import { HeaderComponent } from "./header/header.component";
-import { HomeComponent } from "./home/home.component";
-import { ContactoComponent } from "./contacto/contacto.component";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { RegistroComponent } from "./registro/registro.component";
-import { LoginComponent } from "./login/login.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-import { httpInterceptorProviders } from "./http-interceptors";
-import { FooterComponent } from "./footer/footer.component";
-import { FontTagDirective } from "./directivas/font-tag.directive";
-import { ScrollaaDirective } from "./directivas/scrollaa.directive";
-import { ModuleadmincomponentModule } from "./shared/moduleadmincomponent.module";
-import { NgxLoadingModule } from "ngx-loading";
-import { NgFlashMessagesModule } from "ng-flash-messages";
-import { NgwWowModule } from 'ngx-wow';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AboutComponent } from './about/about.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
+import { IdeasaddComponent } from './ideasadd/ideasadd.component';
+import {HttpClientModule} from '@angular/common/http';
+import { MensajesComponent } from './mensajes/mensajes.component';
+import { IdeasComponent } from './ideas/ideas.component';
+import { EditVideoComponent } from './edit-video/edit-video.component';
+import { NgFlashMessagesModule } from 'ng-flash-messages';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    HomeComponent,
-    ContactoComponent,
-    RegistroComponent,
-    LoginComponent,
+    AboutComponent,
     DashboardComponent,
-    FooterComponent,
-    FontTagDirective,
-    ScrollaaDirective
+    HomeComponent,
+    IdeasaddComponent,
+    MensajesComponent,
+    IdeasComponent,
+    EditVideoComponent,
+    RegistrationComponent,
+    LoginComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule,
-    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    ModuleadmincomponentModule,
-    NgxLoadingModule.forRoot({}),
-    NgFlashMessagesModule,
-    NgwWowModule
+    NgFlashMessagesModule.forRoot()
   ],
-  providers: [httpInterceptorProviders],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

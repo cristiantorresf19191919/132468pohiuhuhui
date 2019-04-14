@@ -1,16 +1,46 @@
-<h1> WEB PAGE PROFESSIONAL </h1>
-<button class="ml-100" (click)="salirsesion()"> Cerrar Sesion</button>
-<div class="container">
-  <div class="row">
-    <div class="col-12 d-flex justify-content-center">
-        <!-- Your customer chat code -->
-        <div class="fb-customerchat"
-          attribution=setup_tool
-          page_id="388522938585860"
-          theme_color="#ff7e29"
-          logged_in_greeting="Hola, Bienvenido en que te podemos colaborar?"
-          logged_out_greeting="Hola, Bienvenido en que te podemos colaborar?">
-        </div>
-    </div>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+    <img src="assets/tiger.png" alt="" style="width: 40px" class="rounded img-fluid ">
+  <a class="navbar-brand" href="#">Cleisser</a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="Home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="About">About</a>
+      </li>      
+     
+    </ul>
+    bootstrap ejemplo
+ 
+      
+    
+   <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+          <a routerLink="Login" class="nav-link">Login</a>
+          
+        </li>
+  
+        <li class="nav-item">
+            <a routerLink="Registro" class="nav-link">Register</a>
+        </li>
+     <li class="aba nav-item dropdown">
+       <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink"
+       >
+      Productos
+      </a>
+      <div class="dropdown-menu">
+        <a  routerLink="IdeasDone" class="dropdown-item">Market</a>
+        <a  class="dropdown-item" routerLink="Login"> Login </a>
+        <a  class="dropdown-item" routerLink="Registro"> Register </a>
+        <a  class="dropdown-item">--- </a>
+        <a  class="dropdown-item">--- </a>
+      </div>
+     </li>
+   </ul>      
   </div>
-</div>
+</nav>

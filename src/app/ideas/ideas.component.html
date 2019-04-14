@@ -1,0 +1,24 @@
+
+ <ng-flash-message></ng-flash-message>
+<button (click)="muestredelservidor()" class="btn btn-dark" > Mostrar Datos del Servidor</button>
+
+<h1> Datos del servidor</h1>
+
+<div *ngIf="datosObtenidos">
+
+  <div *ngFor="let reciva of datosObtenidos ">
+    
+    <div class="card card-body mb-2">
+      <h1> {{reciva.title}}</h1>
+      <h4> {{reciva.details}}</h4>
+      <h5> {{reciva.date | date:'medium'}}</h5>
+      <h4 class="text-danger">{{reciva._id}}</h4>
+      <button class="btn btn-dark btn-block mb-2"  routerLink="/EditVideo/{{reciva._id}}"> Edit Idea </button>
+      <button class="bton btn-danger bton-block" (click)=borrar(reciva._id,reciva)>Eliminar</button>
+    </div>
+    
+  
+  </div>
+
+</div>
+

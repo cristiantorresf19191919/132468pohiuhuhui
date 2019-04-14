@@ -1,27 +1,21 @@
-# CumbreAndina
+packages to be added to a customer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
+colombian currency
 
-## Development server
+*Month   -->  $80.000
+*Three Months ---> $212.000
+*six months ---> $350.000
+*year ---------> $600.000
+*8 classes -------> $130.000
+*8 classes plus month plan -----> $200.000
+*12 classes + months plan ------> $250.000
+* 4 classes saturday -----------> $130.000
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+these are the packages that admin role will add to a customer by picking to the registered customer inside the table, table refreshes with socket IO, and each customer shows with the selected plan, I guess we can add this plan
+with dropdown. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+after the period of time is finished, it should send notifications later we will use facebook api 
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+admin role credentials are in a sweetalert msg

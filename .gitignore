@@ -8,10 +8,6 @@
 # dependencies
 /node_modules
 
-# profiling files
-chrome-profiler-events.json
-speed-measure-plugin.json
-
 # IDEs and editors
 /.idea
 .project
@@ -41,7 +37,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-node_modules
-node_modules
-e2e
-assets/slideshow.gif
