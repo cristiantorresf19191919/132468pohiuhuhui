@@ -1,0 +1,16 @@
+.login-box {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    min-height: calc(100vh - 58px);
+    background: #f3f3f3;
+}
+.login-inner-box {
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 0px 10px #e0f5ff;
+}
+.login-image {
+    border-radius: 50%;
+    width: 200px;
+}
