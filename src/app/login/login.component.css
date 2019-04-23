@@ -8,6 +8,7 @@
 .login-inner-box {
     padding: 20px;
     background: #fff;
+    box-shadow: 0px 0px 10px #e0f5ff;
 }
 .login-image {
     border-radius: 50%;
